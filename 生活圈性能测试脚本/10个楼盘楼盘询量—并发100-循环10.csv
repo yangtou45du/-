@@ -1,0 +1,2 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
+1551237573975,155,楼盘询量,200,OK,楼盘询量 1-1,text,true,,1152,610,1,1,155,0,40

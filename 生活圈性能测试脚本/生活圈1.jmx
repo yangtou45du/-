@@ -1,0 +1,1267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath">E:\soft\jemeter\apache-jmeter-4.0\apache-jmeter-4.0\lib\ext\fastjson-1.2.31.jar</stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="楼盘询量" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="false">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="beginTime" elementType="Argument">
+              <stringProp name="Argument.name">beginTime</stringProp>
+              <stringProp name="Argument.value">2019-02-28</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="city" elementType="Argument">
+              <stringProp name="Argument.name">city</stringProp>
+              <stringProp name="Argument.value">110100</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="continuation" elementType="Argument">
+              <stringProp name="Argument.name">continuation</stringProp>
+              <stringProp name="Argument.value">false</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="count" elementType="Argument">
+              <stringProp name="Argument.name">count</stringProp>
+              <stringProp name="Argument.value">001</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="endtime" elementType="Argument">
+              <stringProp name="Argument.name">endtime</stringProp>
+              <stringProp name="Argument.value">2019-02-28</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="moretwo" elementType="Argument">
+              <stringProp name="Argument.name">moretwo</stringProp>
+              <stringProp name="Argument.value">false</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="premiseids" elementType="Argument">
+              <stringProp name="Argument.name">premiseids</stringProp>
+              <stringProp name="Argument.value">277104,250926</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="second" elementType="Argument">
+              <stringProp name="Argument.name">second</stringProp>
+              <stringProp name="Argument.value">003</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="trade" elementType="Argument">
+              <stringProp name="Argument.name">trade</stringProp>
+              <stringProp name="Argument.value">H01903</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="type" elementType="Argument">
+              <stringProp name="Argument.name">type</stringProp>
+              <stringProp name="Argument.value">003</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="楼盘询量" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;city&quot;:530100,&#xd;
+    &quot;beginTime&quot;: &quot;2019-02-27&quot;,  &#xd;
+    &quot;count&quot;:&quot;001&quot;,&#xd;
+    &quot;endTime&quot;: &quot;2019-03-01&quot;,&#xd;
+    &quot;second&quot;: &quot;001&quot;,  &#xd;
+    &quot;trade&quot;: &quot;H01701&quot;, &#xd;
+    &quot;type&quot;: &quot;001&quot;, &#xd;
+    &quot;moreTwo&quot;: &quot;true&quot;, &#xd;
+    &quot;continuation&quot;: &quot;false&quot;, &#xd;
+    &quot;premiseIds&quot;: &quot;42927,1190059,4246784,1185770,1188784,1191611,1185780,1185777,1185770,1185768&quot;&#xd;
+} </stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">t.sale.api.xinchao.mobi</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/service/queryByProject?sign=${sign}&amp;timestamp=${timestamp}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">
+import org.apache.commons.codec.digest.DigestUtils;
+vars.get(&quot;${beginTime}&quot;);
+vars.get(&quot;${city}&quot;);
+vars.get(&quot;${continuation}&quot;);
+vars.get(&quot;${count}&quot;);
+vars.get(&quot;${endtime}&quot;);
+vars.get(&quot;${moretwo}&quot;);
+vars.get(&quot;${premiseids}&quot;);
+vars.get(&quot;${second}&quot;);
+vars.get(&quot;${trade}&quot;);
+vars.get(&quot;${type}&quot;);
+String a = &quot;begintime=&quot;+&quot;${beginTime}&quot;;
+String b = &quot;city=&quot;+&quot;${city}&quot;;
+String c = &quot;continuation=&quot;+&quot;${continuation}&quot;;
+String d = &quot;count=&quot;+&quot;${count}&quot;;
+String e = &quot;timestamp=&quot;+&quot;${__time(/1000,)}&quot;;
+String f = &quot;endtime=&quot;+&quot;${endtime}&quot;;
+String g = &quot;moretwo=&quot;+&quot;${moretwo}&quot;;
+String h = &quot;premiseids=&quot;+&quot;${premiseids}&quot;;
+String i = &quot;second=&quot;+&quot;${second}&quot;;
+String j = &quot;trade=&quot;+&quot;${trade}&quot;;
+String l = &quot;type=&quot;+&quot;${type}&quot;+&quot;46d01f7fe5b631c0993dc620094690e3&quot;;
+String k = a+&quot;&amp;&quot;+b+&quot;&amp;&quot;+c+&quot;&amp;&quot;+d+&quot;&amp;&quot;+f+&quot;&amp;&quot;+g+&quot;&amp;&quot;+h+&quot;&amp;&quot;+i+&quot;&amp;&quot;+e+&quot;&amp;&quot;+j+&quot;&amp;&quot;+l;
+//System.out.println(k);
+
+String sign = DigestUtils.md5Hex(k);
+System.out.println(sign);
+String timestamp = &quot;${__time(/1000,)}&quot;;
+vars.put(&quot;sign&quot;,sign);
+vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import org.apache.jmeter.config.Arguments; 
+import java.util.*;
+import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.codec.digest.DigestUtils;
+//获取请求body
+Arguments args = sampler.getArguments(); 
+
+String jsonStr = args.toString().replace(&quot;(&quot;,&quot;&quot;).replace(&quot;)&quot;,&quot;&quot;).replace(&quot;=&quot;,&quot;&quot;);
+vars.put(&quot;jsonStr&quot;,jsonStr);
+//String jsonStr = &quot;&quot;;
+StringBuffer signStr = new StringBuffer();
+JSONObject jsonObject = JSONObject.parseObject(jsonStr);
+jsonObject.put(&quot;timestamp&quot;,System.currentTimeMillis()/1000);
+
+List keyList = new ArrayList(jsonObject.keySet());
+Collections.sort(keyList);
+for (String keyTemp : keyList) {
+if (null == keyTemp || &quot;&quot;.equals(keyTemp) || jsonObject.getString(keyTemp) == null
+|| &quot;&quot;.equals(jsonObject.getString(keyTemp))) {
+continue;
+}
+signStr.append(keyTemp.toLowerCase(Locale.ENGLISH) + &quot;=&quot; + jsonObject.getString(keyTemp)).append(&quot;&amp;&quot;);
+}
+String timestamp= jsonObject.getString(&quot;timestamp&quot;);
+vars.put(&quot;timestamp&quot;,timestamp);
+String result=signStr.substring(0,signStr.length()-1)+&quot;46d01f7fe5b631c0993dc620094690e3&quot;;
+vars.put(&quot;result&quot;,result);
+String sign = DigestUtils.md5Hex(result);//加密
+vars.put(&quot;sign&quot;,sign);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <SyncTimer guiclass="TestBeanGUI" testclass="SyncTimer" testname="Synchronizing Timer" enabled="false">
+            <intProp name="groupSize">1000</intProp>
+            <longProp name="timeoutInMs">0</longProp>
+          </SyncTimer>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1221383309">{&quot;code&quot;:&quot;xc10000&quot;,&quot;bizCode&quot;:&quot;200&quot;,&quot;msg&quot;:&quot;请求成功&quot;,&quot;status&quot;:true,&quot;data&quot;:</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="按楼盘提交订单" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">2</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="按楼盘提交订单" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+&quot;city&quot;:${city},&#xd;
+&quot;beginTime&quot;: &quot;2019-03-02&quot;,&#xd;
+&quot;count&quot;: &quot;001&quot;,&#xd;
+&quot;endTime&quot;: &quot;2019-03-08&quot;,&#xd;
+&quot;second&quot;: &quot;001&quot;,&#xd;
+&quot;trade&quot;: &quot;H01701&quot;,&#xd;
+&quot;type&quot;: &quot;003&quot;,&#xd;
+&quot;continuation&quot;: &quot;false&quot;,&#xd;
+&quot;moreTwo&quot;: &quot;false&quot;,&#xd;
+&quot;details&quot;:${primary_id}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">t.sale.api.xinchao.mobi</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/service/orderByProject?sign=${sign}&amp;timestamp=${timestamp}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="城市和楼盘id" enabled="true">
+            <stringProp name="filename">D:\文档\生活圈接口\生活圈性能测试脚本\project_and_city.csv</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="variableNames">city,primary_id</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+            <stringProp name="delimiter">|</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="加密" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import org.apache.jmeter.config.Arguments; 
+import java.util.*;
+import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.codec.digest.DigestUtils;
+//获取请求body
+Arguments args = sampler.getArguments(); 
+
+String jsonStr = args.toString().replace(&quot;(&quot;,&quot;&quot;).replace(&quot;)&quot;,&quot;&quot;).replace(&quot;=&quot;,&quot;&quot;);
+vars.put(&quot;jsonStr&quot;,jsonStr);
+//String jsonStr = &quot;&quot;;
+StringBuffer signStr = new StringBuffer();
+JSONObject jsonObject = JSONObject.parseObject(jsonStr);
+jsonObject.put(&quot;timestamp&quot;,System.currentTimeMillis()/1000);
+
+List keyList = new ArrayList(jsonObject.keySet());
+Collections.sort(keyList);
+for (String keyTemp : keyList) {
+if (null == keyTemp || &quot;&quot;.equals(keyTemp) || jsonObject.getString(keyTemp) == null
+|| &quot;&quot;.equals(jsonObject.getString(keyTemp))) {
+continue;
+}
+signStr.append(keyTemp.toLowerCase(Locale.ENGLISH) + &quot;=&quot; + jsonObject.getString(keyTemp)).append(&quot;&amp;&quot;);
+}
+String timestamp= jsonObject.getString(&quot;timestamp&quot;);
+vars.put(&quot;timestamp&quot;,timestamp);
+String result=signStr.substring(0,signStr.length()-1)+&quot;46d01f7fe5b631c0993dc620094690e3&quot;;
+vars.put(&quot;result&quot;,result);
+String sign = DigestUtils.md5Hex(result);//加密
+vars.put(&quot;sign&quot;,sign);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename">D:\文档\生活圈接口\生活圈性能测试脚本\结果\楼盘提交订单\35个楼盘提交—并发35.csv</stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+        <SyncTimer guiclass="TestBeanGUI" testclass="SyncTimer" testname="Synchronizing Timer" enabled="false">
+          <intProp name="groupSize">35</intProp>
+          <longProp name="timeoutInMs">0</longProp>
+        </SyncTimer>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="按点位提交订单" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">35</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="按点位提交订单" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;city&quot;:${city},  &#xd;
+    &quot;beginTime&quot;: &quot;2019-03-16&quot;,&#xd;
+    &quot;count&quot;: &quot;001&quot;,&#xd;
+    &quot;endTime&quot;: &quot;2019-03-24&quot;,&#xd;
+    &quot;second&quot;: &quot;001&quot;,&#xd;
+    &quot;trade&quot;: &quot;H01901&quot;,&#xd;
+    &quot;type&quot;: &quot;001&quot;,&#xd;
+    &quot;continuation&quot;: false,&#xd;
+    &quot;moreTwo&quot;: false,&#xd;
+    &quot;codes&quot;: &quot;${machineNum}&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">t.sale.api.xinchao.mobi</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/service/orderByPremise?sign=${sign}&amp;timestamp=${timestamp}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">
+import org.apache.commons.codec.digest.DigestUtils;
+vars.get(&quot;${beginTime}&quot;);
+vars.get(&quot;${city}&quot;);
+vars.get(&quot;${continuation}&quot;);
+vars.get(&quot;${count}&quot;);
+vars.get(&quot;${endtime}&quot;);
+vars.get(&quot;${moretwo}&quot;);
+vars.get(&quot;${codes}&quot;);
+vars.get(&quot;${second}&quot;);
+vars.get(&quot;${trade}&quot;);
+vars.get(&quot;${type}&quot;);
+String a = &quot;begintime=&quot;+&quot;${beginTime}&quot;;
+String b = &quot;city=&quot;+&quot;${city}&quot;;
+String c = &quot;continuation=&quot;+&quot;${continuation}&quot;;
+String d = &quot;count=&quot;+&quot;${count}&quot;;
+String e = &quot;timestamp=&quot;+&quot;${__time(/1000,)}&quot;;
+String f = &quot;endtime=&quot;+&quot;${endtime}&quot;;
+String g = &quot;moretwo=&quot;+&quot;${moretwo}&quot;;
+String h = &quot;codes=&quot;+&quot;${codes}&quot;;
+String i = &quot;second=&quot;+&quot;${second}&quot;;
+String j = &quot;trade=&quot;+&quot;${trade}&quot;;
+String l = &quot;type=&quot;+&quot;${type}&quot;+&quot;46d01f7fe5b631c0993dc620094690e3&quot;;
+String k = a+&quot;&amp;&quot;+b+&quot;&amp;&quot;+h+&quot;&amp;&quot;+c+&quot;&amp;&quot;+d+&quot;&amp;&quot;+f+&quot;&amp;&quot;+g+&quot;&amp;&quot;+i+&quot;&amp;&quot;+e+&quot;&amp;&quot;+j+&quot;&amp;&quot;+l;
+//System.out.println(k);
+
+String sign = DigestUtils.md5Hex(k);
+System.out.println(sign);
+String timestamp = &quot;${__time(/1000,)}&quot;;
+vars.put(&quot;sign&quot;,sign);
+vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import org.apache.jmeter.config.Arguments; 
+import java.util.*;
+import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.codec.digest.DigestUtils;
+//获取请求body
+Arguments args = sampler.getArguments(); 
+
+String jsonStr = args.toString().replace(&quot;(&quot;,&quot;&quot;).replace(&quot;)&quot;,&quot;&quot;).replace(&quot;=&quot;,&quot;&quot;);
+vars.put(&quot;jsonStr&quot;,jsonStr);
+//String jsonStr = &quot;&quot;;
+StringBuffer signStr = new StringBuffer();
+JSONObject jsonObject = JSONObject.parseObject(jsonStr);
+jsonObject.put(&quot;timestamp&quot;,System.currentTimeMillis()/1000);
+
+List keyList = new ArrayList(jsonObject.keySet());
+Collections.sort(keyList);
+for (String keyTemp : keyList) {
+if (null == keyTemp || &quot;&quot;.equals(keyTemp) || jsonObject.getString(keyTemp) == null
+|| &quot;&quot;.equals(jsonObject.getString(keyTemp))) {
+continue;
+}
+signStr.append(keyTemp.toLowerCase(Locale.ENGLISH) + &quot;=&quot; + jsonObject.getString(keyTemp)).append(&quot;&amp;&quot;);
+}
+String timestamp= jsonObject.getString(&quot;timestamp&quot;);
+vars.put(&quot;timestamp&quot;,timestamp);
+String result=signStr.substring(0,signStr.length()-1)+&quot;46d01f7fe5b631c0993dc620094690e3&quot;;
+vars.put(&quot;result&quot;,result);
+String sign = DigestUtils.md5Hex(result);//加密
+vars.put(&quot;sign&quot;,sign);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="城市和设备" enabled="true">
+            <stringProp name="filename">D:\文档\生活圈接口\生活圈性能测试脚本\code_and_city.csv</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="variableNames">city,machineNum</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+            <stringProp name="delimiter">;</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <SyncTimer guiclass="TestBeanGUI" testclass="SyncTimer" testname="Synchronizing Timer" enabled="true">
+            <intProp name="groupSize">35</intProp>
+            <longProp name="timeoutInMs">0</longProp>
+          </SyncTimer>
+          <hashTree/>
+          <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename">D:\文档\生活圈接口\生活圈性能测试脚本\结果\点位提交订单\35个并发.csv</stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="确认订单" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="orderId" elementType="Argument">
+              <stringProp name="Argument.name">orderId</stringProp>
+              <stringProp name="Argument.value">vo5irpp269g00</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="确认订单" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+ &quot;orderId&quot;:&quot;${orderId}&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">t.sale.api.xinchao.mobi</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/service/confirmOrder?sign=${sign}&amp;timestamp=${timestamp}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">
+import org.apache.commons.codec.digest.DigestUtils;
+vars.get(&quot;${orderId}&quot;);
+String a = &quot;orderid=&quot;+&quot;${orderId}&quot;;
+String e = &quot;timestamp=&quot;+&quot;${__time(/1000,)}&quot;;
+String l = &quot;46d01f7fe5b631c0993dc620094690e3&quot;;
+String k = a+&quot;&amp;&quot;+e+l;
+//System.out.println(k);
+
+String sign = DigestUtils.md5Hex(k);
+System.out.println(sign);
+String timestamp = &quot;${__time(/1000,)}&quot;;
+vars.put(&quot;sign&quot;,sign);
+vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import org.apache.jmeter.config.Arguments; 
+import java.util.*;
+import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.codec.digest.DigestUtils;
+//获取请求body
+Arguments args = sampler.getArguments(); 
+
+String jsonStr = args.toString().replace(&quot;(&quot;,&quot;&quot;).replace(&quot;)&quot;,&quot;&quot;).replace(&quot;=&quot;,&quot;&quot;);
+vars.put(&quot;jsonStr&quot;,jsonStr);
+//String jsonStr = &quot;&quot;;
+StringBuffer signStr = new StringBuffer();
+JSONObject jsonObject = JSONObject.parseObject(jsonStr);
+jsonObject.put(&quot;timestamp&quot;,System.currentTimeMillis()/1000);
+
+List keyList = new ArrayList(jsonObject.keySet());
+Collections.sort(keyList);
+for (String keyTemp : keyList) {
+if (null == keyTemp || &quot;&quot;.equals(keyTemp) || jsonObject.getString(keyTemp) == null
+|| &quot;&quot;.equals(jsonObject.getString(keyTemp))) {
+continue;
+}
+signStr.append(keyTemp.toLowerCase(Locale.ENGLISH) + &quot;=&quot; + jsonObject.getString(keyTemp)).append(&quot;&amp;&quot;);
+}
+String timestamp= jsonObject.getString(&quot;timestamp&quot;);
+vars.put(&quot;timestamp&quot;,timestamp);
+String result=signStr.substring(0,signStr.length()-1)+&quot;46d01f7fe5b631c0993dc620094690e3&quot;;
+vars.put(&quot;result&quot;,result);
+String sign = DigestUtils.md5Hex(result);//加密
+vars.put(&quot;sign&quot;,sign);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="取消订单" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">65</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="取消订单" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+ &quot;orderId&quot;:&quot;${orderId}&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">t.sale.api.xinchao.mobi</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/service/cancelOrder?sign=${sign}&amp;timestamp=${timestamp}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">
+import org.apache.commons.codec.digest.DigestUtils;
+vars.get(&quot;${orderId}&quot;);
+String a = &quot;orderid=&quot;+&quot;${orderId}&quot;;
+String e = &quot;timestamp=&quot;+&quot;${__time(/1000,)}&quot;;
+String l = &quot;46d01f7fe5b631c0993dc620094690e3&quot;;
+String k = a+&quot;&amp;&quot;+e+l;
+//System.out.println(k);
+
+String sign = DigestUtils.md5Hex(k);
+System.out.println(sign);
+String timestamp = &quot;${__time(/1000,)}&quot;;
+vars.put(&quot;sign&quot;,sign);
+vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import org.apache.jmeter.config.Arguments; 
+import java.util.*;
+import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.codec.digest.DigestUtils;
+//获取请求body
+Arguments args = sampler.getArguments(); 
+
+String jsonStr = args.toString().replace(&quot;(&quot;,&quot;&quot;).replace(&quot;)&quot;,&quot;&quot;).replace(&quot;=&quot;,&quot;&quot;);
+vars.put(&quot;jsonStr&quot;,jsonStr);
+//String jsonStr = &quot;&quot;;
+StringBuffer signStr = new StringBuffer();
+JSONObject jsonObject = JSONObject.parseObject(jsonStr);
+jsonObject.put(&quot;timestamp&quot;,System.currentTimeMillis()/1000);
+
+List keyList = new ArrayList(jsonObject.keySet());
+Collections.sort(keyList);
+for (String keyTemp : keyList) {
+if (null == keyTemp || &quot;&quot;.equals(keyTemp) || jsonObject.getString(keyTemp) == null
+|| &quot;&quot;.equals(jsonObject.getString(keyTemp))) {
+continue;
+}
+signStr.append(keyTemp.toLowerCase(Locale.ENGLISH) + &quot;=&quot; + jsonObject.getString(keyTemp)).append(&quot;&amp;&quot;);
+}
+String timestamp= jsonObject.getString(&quot;timestamp&quot;);
+vars.put(&quot;timestamp&quot;,timestamp);
+String result=signStr.substring(0,signStr.length()-1)+&quot;46d01f7fe5b631c0993dc620094690e3&quot;;
+vars.put(&quot;result&quot;,result);
+String sign = DigestUtils.md5Hex(result);//加密
+vars.put(&quot;sign&quot;,sign);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="filename">D:\文档\生活圈接口\生活圈性能测试脚本\生活圈订单id.csv</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="variableNames">orderId</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="664123859">删除成功</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename">D:\文档\生活圈接口\生活圈性能测试脚本\结果\取消订单\并发65.csv</stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <SyncTimer guiclass="TestBeanGUI" testclass="SyncTimer" testname="Synchronizing Timer" enabled="true">
+            <intProp name="groupSize">65</intProp>
+            <longProp name="timeoutInMs">0</longProp>
+          </SyncTimer>
+          <hashTree/>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="修改订单" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">34</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="修改订单" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;orderId&quot;:&quot;${orderId}&quot;, &#xd;
+     &#xd;
+    &quot;endTime&quot;: &quot;2019-02-27&quot;&#xd;
+ } </stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">t.sale.api.xinchao.mobi</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/service/updateOrder?sign=${sign}&amp;timestamp=${timestamp}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import org.apache.jmeter.config.Arguments; 
+import java.util.*;
+import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.codec.digest.DigestUtils;
+//获取请求body
+Arguments args = sampler.getArguments(); 
+
+String jsonStr = args.toString().replace(&quot;(&quot;,&quot;&quot;).replace(&quot;)&quot;,&quot;&quot;).replace(&quot;=&quot;,&quot;&quot;);
+vars.put(&quot;jsonStr&quot;,jsonStr);
+//String jsonStr = &quot;&quot;;
+StringBuffer signStr = new StringBuffer();
+JSONObject jsonObject = JSONObject.parseObject(jsonStr);
+jsonObject.put(&quot;timestamp&quot;,System.currentTimeMillis()/1000);
+
+List keyList = new ArrayList(jsonObject.keySet());
+Collections.sort(keyList);
+for (String keyTemp : keyList) {
+if (null == keyTemp || &quot;&quot;.equals(keyTemp) || jsonObject.getString(keyTemp) == null
+|| &quot;&quot;.equals(jsonObject.getString(keyTemp))) {
+continue;
+}
+signStr.append(keyTemp.toLowerCase(Locale.ENGLISH) + &quot;=&quot; + jsonObject.getString(keyTemp)).append(&quot;&amp;&quot;);
+}
+String timestamp= jsonObject.getString(&quot;timestamp&quot;);
+vars.put(&quot;timestamp&quot;,timestamp);
+String result=signStr.substring(0,signStr.length()-1)+&quot;46d01f7fe5b631c0993dc620094690e3&quot;;
+vars.put(&quot;result&quot;,result);
+String sign = DigestUtils.md5Hex(result);//加密
+vars.put(&quot;sign&quot;,sign);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="filename">D:\文档\生活圈接口\生活圈性能测试脚本\生活圈订单id.csv</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="variableNames">orderId</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="635285210">修改成功</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
